@@ -1,0 +1,56 @@
+# ── Python ────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual Environment ───────────────────
+venv/
+env/
+.venv/
+
+# ── Environment Variables (NEVER commit) ──
+.env
+.env.*
+!.env.example
+
+# ── Database ──────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Temp / Upload files ───────────────────
+*.webm
+*.ogg
+*.mp3
+*.wav
+uploads/
+temp/
+
+# ── Node / React ──────────────────────────
+node_modules/
+dist/
+build/
+.vite/
+
+# ── OS Files ──────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Logs ──────────────────────────────────
+*.log
+logs/
+npm-debug.log*

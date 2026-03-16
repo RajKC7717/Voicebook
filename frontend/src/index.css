@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-base: #0d0f14;
+  --bg-card: #161920;
+  --bg-hover: #1e222b;
+  --border: #2a2f3d;
+  --text-primary: #f0f2f8;
+  --text-muted: #6b7280;
+  --green: #22c55e;
+  --green-dim: #16a34a22;
+  --red: #ef4444;
+  --red-dim: #dc262622;
+  --amber: #f59e0b;
+  --amber-dim: #d9770622;
+  --accent: #6366f1;
+  --accent-dim: #6366f122;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+}
