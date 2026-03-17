@@ -69,8 +69,8 @@ export default function KhataOCR() {
 
   return (
     <div style={{ maxWidth: '680px', margin: '0 auto', paddingTop: '40px' }}>
-      <h1 style={{ fontSize: '28px', fontWeight: 800, marginBottom: '8px' }}>Khata OCR</h1>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '14px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '12px', fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.5px' }}>Khata OCR</h1>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '14px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
         Upload a photo of your handwritten khata — entries will be extracted automatically
       </p>
 
@@ -90,10 +90,10 @@ export default function KhataOCR() {
           onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
         >
           <div style={{ fontSize: '48px', marginBottom: '16px' }}>📷</div>
-          <p style={{ fontWeight: 700, fontSize: '16px', marginBottom: '8px' }}>
+          <p style={{ fontWeight: 800, fontSize: '17px', marginBottom: '8px', fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.3px' }}>
             Click to upload khata photo
           </p>
-          <p style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '13px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
             JPG, PNG supported — handwritten Hindi/English entries
           </p>
           <input
@@ -117,7 +117,7 @@ export default function KhataOCR() {
             }} />
           )}
           <div style={{ fontSize: '40px', marginBottom: '16px' }}>🔍</div>
-          <p style={{ color: 'var(--text-muted)' }}>Reading image → extracting entries...</p>
+          <p style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>Reading image → extracting entries...</p>
         </div>
       )}
 
@@ -138,7 +138,7 @@ export default function KhataOCR() {
             background: 'var(--bg-card)', border: '1px solid var(--border)',
             borderRadius: '10px', padding: '14px', marginBottom: '20px',
           }}>
-            <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+            <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
               Raw OCR Output
             </p>
             <p style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: 'DM Mono, monospace', lineHeight: 1.6 }}>
@@ -147,7 +147,7 @@ export default function KhataOCR() {
           </div>
 
           {/* Extracted Entries */}
-          <p style={{ fontWeight: 700, marginBottom: '12px', fontSize: '15px' }}>
+          <p style={{ fontWeight: 800, marginBottom: '12px', fontSize: '16px', fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.3px' }}>
             {preview.entry_count} {preview.entry_count === 1 ? 'entry' : 'entries'} found:
           </p>
 
@@ -155,7 +155,7 @@ export default function KhataOCR() {
             <div style={{
               background: 'var(--amber-dim)', border: '1px solid var(--amber)',
               borderRadius: '10px', padding: '20px', textAlign: 'center',
-              color: 'var(--amber)', marginBottom: '20px',
+              color: 'var(--amber)', marginBottom: '20px', fontFamily: 'Poppins, sans-serif', fontWeight: 700,
             }}>
               No readable entries found. Try a clearer photo with better lighting.
             </div>
@@ -169,23 +169,24 @@ export default function KhataOCR() {
                   gap: '12px',
                 }}>
                   <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px' }}>Party</div>
-                    <div style={{ fontWeight: 700 }}>{entry.party_name}</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2px' }}>Party</div>
+                    <div style={{ fontWeight: 800, fontFamily: 'Poppins, sans-serif' }}>{entry.party_name}</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px' }}>Amount</div>
-                    <div style={{ fontWeight: 700, color: TYPE_COLOR[entry.transaction_type], fontFamily: 'DM Mono, monospace' }}>
+                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2px' }}>Amount</div>
+                    <div style={{ fontWeight: 800, color: TYPE_COLOR[entry.transaction_type], fontFamily: 'DM Mono, monospace' }}>
                       ₹{Number(entry.amount).toLocaleString('en-IN')}
                     </div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px' }}>Type</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2px' }}>Type</div>
                     <span style={{
                       background: `${TYPE_COLOR[entry.transaction_type]}22`,
                       color: TYPE_COLOR[entry.transaction_type],
                       border: `1px solid ${TYPE_COLOR[entry.transaction_type]}44`,
-                      borderRadius: '6px', padding: '2px 10px',
+                      borderRadius: '6px', padding: '3px 10px',
                       fontSize: '12px', fontWeight: 700,
+                      fontFamily: 'Poppins, sans-serif',
                     }}>
                       {entry.transaction_type}
                     </span>
@@ -197,20 +198,19 @@ export default function KhataOCR() {
 
           <div style={{ display: 'flex', gap: '12px' }}>
             {preview.entries.length > 0 && (
-              <button onClick={handleConfirm} style={{
-                flex: 1, padding: '14px', borderRadius: '10px',
+              <button onClick={handleConfirm} style={{ flex: 1, padding: '14px', borderRadius: '8px',
                 background: 'var(--green)', border: 'none',
                 color: '#000', fontWeight: 800, fontSize: '15px',
-                cursor: 'pointer', fontFamily: 'Syne, sans-serif',
+                cursor: 'pointer', fontFamily: 'Poppins, sans-serif',
               }}>
                 ✅ Save All {preview.entry_count} Entries
               </button>
             )}
             <button onClick={reset} style={{
-              flex: 1, padding: '14px', borderRadius: '10px',
+              flex: 1, padding: '14px', borderRadius: '8px',
               background: 'var(--bg-card)', border: '1px solid var(--border)',
               color: 'var(--text-muted)', fontWeight: 700, fontSize: '15px',
-              cursor: 'pointer', fontFamily: 'Syne, sans-serif',
+              cursor: 'pointer', fontFamily: 'Poppins, sans-serif',
             }}>
               🗑️ Discard
             </button>
@@ -221,7 +221,7 @@ export default function KhataOCR() {
       {/* ── SAVING ── */}
       {state === STATES.SAVING && (
         <div style={{ textAlign: 'center', paddingTop: '40px' }}>
-          <div style={{ fontSize: '40px', marginBottom: '16px' }}>💾</div>
+          <div style={{ fontSize: '40px', marginBottom: '16px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>💾</div>
           <p style={{ color: 'var(--text-muted)' }}>Saving entries to ledger...</p>
         </div>
       )}
@@ -230,17 +230,17 @@ export default function KhataOCR() {
       {state === STATES.SUCCESS && (
         <div style={{ textAlign: 'center', paddingTop: '40px' }}>
           <div style={{ fontSize: '64px', marginBottom: '16px' }}>✅</div>
-          <p style={{ color: 'var(--green)', fontWeight: 800, fontSize: '20px' }}>
+          <p style={{ color: 'var(--green)', fontWeight: 800, fontSize: '18px', fontFamily: 'Poppins, sans-serif' }}>
             {savedCount} {savedCount === 1 ? 'entry' : 'entries'} saved!
           </p>
-          <p style={{ color: 'var(--text-muted)', marginTop: '8px', marginBottom: '28px' }}>
+          <p style={{ color: 'var(--text-muted)', marginTop: '8px', marginBottom: '28px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
             Check the Ledger tab — they'll appear within 2 seconds
           </p>
           <button onClick={reset} style={{
-            padding: '12px 32px', borderRadius: '10px',
+            padding: '12px 32px', borderRadius: '8px',
             background: 'var(--accent)', border: 'none',
             color: '#fff', fontWeight: 700, cursor: 'pointer',
-            fontFamily: 'Syne, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
           }}>
             Upload Another
           </button>
@@ -253,14 +253,14 @@ export default function KhataOCR() {
           background: 'var(--red-dim)', border: '1px solid var(--red)',
           borderRadius: '16px', padding: '24px', textAlign: 'center',
         }}>
-          <p style={{ color: 'var(--red)', fontWeight: 700, marginBottom: '16px' }}>
+          <p style={{ color: 'var(--red)', fontWeight: 700, marginBottom: '16px', fontFamily: 'Poppins, sans-serif' }}>
             ❌ {errorMsg}
           </p>
           <button onClick={reset} style={{
-            padding: '10px 28px', borderRadius: '10px',
+            padding: '10px 28px', borderRadius: '8px',
             background: 'var(--red)', border: 'none',
             color: '#fff', fontWeight: 700, cursor: 'pointer',
-            fontFamily: 'Syne, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
           }}>
             Try Again
           </button>

@@ -33,6 +33,7 @@ export default function LedgerTable({ transactions }) {
                 padding: '14px 18px', textAlign: 'left',
                 fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em',
                 color: 'var(--text-muted)', textTransform: 'uppercase',
+                fontFamily: 'Poppins, sans-serif',
               }}>
                 {h}
               </th>
@@ -50,7 +51,7 @@ export default function LedgerTable({ transactions }) {
               onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-hover)'}
               onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
               >
-                <td style={{ padding: '14px 18px', fontWeight: 700 }}>
+                <td style={{ padding: '14px 18px', fontWeight: 700, fontFamily: 'Poppins, sans-serif' }}>
                   {tx.party_name}
                 </td>
                 <td style={{ padding: '14px 18px', fontWeight: 700, color: cfg.color, fontFamily: 'DM Mono, monospace' }}>
@@ -60,13 +61,14 @@ export default function LedgerTable({ transactions }) {
                   <span style={{
                     background: cfg.bg, color: cfg.color,
                     border: `1px solid ${cfg.color}44`,
-                    borderRadius: '6px', padding: '3px 10px',
+                    borderRadius: '6px', padding: '4px 10px',
                     fontSize: '12px', fontWeight: 700,
+                    fontFamily: 'Poppins, sans-serif',
                   }}>
                     {cfg.label}
                   </span>
                 </td>
-                <td style={{ padding: '14px 18px', color: 'var(--text-muted)', fontSize: '13px' }}>
+                <td style={{ padding: '14px 18px', color: 'var(--text-muted)', fontSize: '13px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
                   {tx.item || '—'}
                 </td>
                 <td style={{ padding: '14px 18px', color: 'var(--text-muted)', fontSize: '13px', fontFamily: 'DM Mono, monospace' }}>

@@ -159,8 +159,8 @@ const reset = () => {
   // ─────────────────────────────────────────────────────────────────────────
   return (
     <div style={{ maxWidth: '560px', margin: '0 auto', paddingTop: '40px' }}>
-      <h1 style={{ fontSize: '28px', fontWeight: 800, marginBottom: '8px' }}>Voice Entry</h1>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '40px', fontSize: '14px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '12px', fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.5px' }}>Voice Entry</h1>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '40px', fontSize: '14px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
         Speak in Hindi, Marathi, or Hinglish — e.g. "Ramesh ne 3000 dene hain cement ke"
       </p>
 
@@ -170,22 +170,22 @@ const reset = () => {
     <button
       onClick={state === STATES.IDLE ? startRecording : stopRecording}
       style={{
-        width: '140px', height: '140px',
+        width: '160px', height: '160px',
         borderRadius: '50%',
-        border: `3px solid ${state === STATES.RECORDING ? 'var(--red)' : 'var(--accent)'}`,
+        border: `4px solid ${state === STATES.RECORDING ? 'var(--red)' : 'var(--accent)'}`,
         background: state === STATES.RECORDING ? 'var(--red-dim)' : 'var(--accent-dim)',
         cursor: 'pointer',
-        fontSize: '52px',
+        fontSize: '60px',
         transition: 'all 0.2s ease',
-        transform: state === STATES.RECORDING ? 'scale(1.08)' : 'scale(1)',
+        transform: state === STATES.RECORDING ? 'scale(1.1)' : 'scale(1)',
         boxShadow: state === STATES.RECORDING
-          ? '0 0 40px var(--red)'
-          : '0 0 20px var(--accent-dim)',
+          ? '0 0 50px var(--red)'
+          : '0 0 30px var(--accent-dim)',
       }}
     >
       {state === STATES.RECORDING ? '⏹️' : '🎙️'}
     </button>
-    <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '14px' }}>
+    <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '14px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
       {state === STATES.IDLE
         ? 'Click to start recording'
         : '🔴 Recording... Click again to stop'}
@@ -207,8 +207,8 @@ const reset = () => {
           background: 'var(--bg-card)', border: '1px solid var(--border)',
           borderRadius: '16px', padding: '28px',
         }}>
-          <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '16px' }}>
-            📝 Heard: <em style={{ color: 'var(--text-primary)' }}>"{transcribed}"</em>
+          <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '16px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
+            📝 Heard: <em style={{ color: 'var(--text-primary)', fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>"{transcribed}"</em>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
@@ -223,14 +223,15 @@ const reset = () => {
               <div key={f.label} style={{
                 background: 'var(--bg-base)', borderRadius: '8px', padding: '12px',
               }}>
-                <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '4px' }}>
+                <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, letterSpacing: '0.3px', textTransform: 'uppercase' }}>
                   {f.label}
                 </div>
                 <div style={{
-                  fontWeight: 700, fontSize: '15px',
+                  fontWeight: 800, fontSize: '16px',
                   color: f.label === 'Type'
                     ? TYPE_COLOR[transaction.transaction_type]
                     : 'var(--text-primary)',
+                  fontFamily: 'Poppins, sans-serif',
                 }}>
                   {f.value}
                 </div>
@@ -239,19 +240,18 @@ const reset = () => {
           </div>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <button onClick={confirm} style={{
-              flex: 1, padding: '14px', borderRadius: '10px',
+            <button onClick={confirm} style={{ flex: 1, padding: '14px', borderRadius: '8px',
               background: 'var(--green)', border: 'none',
               color: '#000', fontWeight: 800, fontSize: '15px',
-              cursor: 'pointer', fontFamily: 'Syne, sans-serif',
+              cursor: 'pointer', fontFamily: 'Poppins, sans-serif',
             }}>
               ✅ Confirm & Save
             </button>
             <button onClick={reset} style={{
-              flex: 1, padding: '14px', borderRadius: '10px',
+              flex: 1, padding: '14px', borderRadius: '8px',
               background: 'var(--bg-base)', border: '1px solid var(--border)',
               color: 'var(--text-muted)', fontWeight: 700, fontSize: '15px',
-              cursor: 'pointer', fontFamily: 'Syne, sans-serif',
+              cursor: 'pointer', fontFamily: 'Poppins, sans-serif',
             }}>
               🗑️ Discard
             </button>
@@ -266,17 +266,17 @@ const reset = () => {
           borderRadius: '16px', padding: '28px', textAlign: 'center',
         }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>🤔</div>
-          <p style={{ color: 'var(--amber)', fontWeight: 700, marginBottom: '8px' }}>
+          <p style={{ color: 'var(--amber)', fontWeight: 700, marginBottom: '8px', fontFamily: 'Poppins, sans-serif', fontSize: '15px' }}>
             Need clarification:
           </p>
-          <p style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-primary)', fontSize: '16px', marginBottom: '24px', fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
             {clarification}
           </p>
           <button onClick={reset} style={{
-            padding: '12px 32px', borderRadius: '10px',
+            padding: '12px 32px', borderRadius: '8px',
             background: 'var(--amber)', border: 'none',
             color: '#000', fontWeight: 800, cursor: 'pointer',
-            fontFamily: 'Syne, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
           }}>
             🎙️ Record Again
           </button>
@@ -287,10 +287,10 @@ const reset = () => {
       {state === STATES.SUCCESS && (
         <div style={{ textAlign: 'center', paddingTop: '40px' }}>
           <div style={{ fontSize: '64px', marginBottom: '16px' }}>✅</div>
-          <p style={{ color: 'var(--green)', fontWeight: 800, fontSize: '20px' }}>
+          <p style={{ color: 'var(--green)', fontWeight: 800, fontSize: '20px', fontFamily: 'Poppins, sans-serif' }}>
             Transaction Saved!
           </p>
-          <p style={{ color: 'var(--text-muted)', marginTop: '8px' }}>
+          <p style={{ color: 'var(--text-muted)', marginTop: '8px', fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
             Check the ledger — it'll appear in 2 seconds
           </p>
         </div>
@@ -302,14 +302,14 @@ const reset = () => {
           background: 'var(--red-dim)', border: '1px solid var(--red)',
           borderRadius: '16px', padding: '24px', textAlign: 'center',
         }}>
-          <p style={{ color: 'var(--red)', fontWeight: 700, marginBottom: '16px' }}>
+          <p style={{ color: 'var(--red)', fontWeight: 700, marginBottom: '16px', fontFamily: 'Poppins, sans-serif' }}>
             ❌ {errorMsg}
           </p>
           <button onClick={reset} style={{
-            padding: '10px 28px', borderRadius: '10px',
+            padding: '10px 28px', borderRadius: '8px',
             background: 'var(--red)', border: 'none',
             color: '#fff', fontWeight: 700, cursor: 'pointer',
-            fontFamily: 'Syne, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
           }}>
             Try Again
           </button>

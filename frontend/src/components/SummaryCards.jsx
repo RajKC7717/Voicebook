@@ -35,11 +35,11 @@ export default function SummaryCards({ summary }) {
           borderRadius: '12px',
           padding: '20px',
         }}>
-          <div style={{ fontSize: '24px', marginBottom: '8px' }}>{card.icon}</div>
-          <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '4px' }}>
+          <div style={{ fontSize: '24px', marginBottom: '12px' }}>{card.icon}</div>
+          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'Poppins, sans-serif', fontWeight: 600, letterSpacing: '0.3px', textTransform: 'uppercase' }}>
             {card.label}
           </div>
-          <div style={{ fontSize: '26px', fontWeight: 800, color: card.color }}>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: card.color, fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.5px' }}>
             {card.value}
           </div>
         </div>

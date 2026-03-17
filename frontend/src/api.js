@@ -14,3 +14,8 @@ export const ocrPreview = (formData) =>
 
 export const ocrConfirm = (entries, ocr_text) =>
   axios.post(`${BASE}/ocr/confirm`, { entries, ocr_text });
+export const sendWhatsAppSummary = () =>
+  axios.post(`${BASE}/whatsapp/send-summary`);
+
+export const previewWhatsAppSummary = () =>
+  axios.get(`${BASE}/whatsapp/preview`);    
